@@ -16,16 +16,16 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 repositories {
     maven { 
         credentials {
-            username "$System.env.user"
-            password "$System.env.pass"
+            username "$System.env.USER"
+            password "$System.env.PASS"
         }
-        url = uri('http://repository.inetpsa.com/maven-virtual')
+        url = uri('https://repository.inetpsa.com/maven-virtual')
         allowInsecureProtocol = true
     }
     // Use Maven Central for resolving dependencies.
